@@ -5,5 +5,6 @@ If you don't like a current layout you can edit the file and replace "ar" or "us
 ```
 # Usage
 ```
+chmod +x switch-layout
 ./switch-layout
 ```
