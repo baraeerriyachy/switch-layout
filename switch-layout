@@ -1,3 +1,11 @@
 #!/bin/sh
-setxkbmap -query | grep -q us && setxkbmap ar || setxkbmap us
 
+current_layout=$(setxkbmap -query | awk '/layout/ {print $2}')
+
+if [ "$current_layout" = "us" ]; then
+    setxkbmap ar
+elif [ "$current_layout" = "ar" ]; then
+    setxkbmap ru
+else
+    setxkbmap us
+fi
